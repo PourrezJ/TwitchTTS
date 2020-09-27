@@ -12,6 +12,7 @@ Idea from the streamer "https://www.twitch.tv/pantoufl" at the bend of a Trackma
 
 ### Built With
 
+* [TwitchLib](https://github.com/TwitchLib/TwitchLib/)
 * [Costura](https://github.com/Fody/Costura)
 * [Newtonsoft.Json](https://www.newtonsoft.com/json)
 
