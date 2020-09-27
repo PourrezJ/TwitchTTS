@@ -13,7 +13,7 @@ using TwitchLib.Client.Models;
 using TwitchLib.Communication.Clients;
 using TwitchLib.Communication.Models;
 
-namespace TwitchTLS
+namespace TwitchTTS
 {
     internal class TwitchConnect : IDisposable
     {
@@ -88,26 +88,6 @@ namespace TwitchTLS
         {
             Main.Instance.ButtonChangeText("Connected");
             Debug.WriteLine($"Connected to {e.AutoJoinChannel}");
-        }
-
-        private static void Client_OnJoinedChannel(object sender, OnJoinedChannelArgs e)
-        {
-            //client.SendMessage(e.Channel, "Hey guys! I am a bot connected via TwitchLib!");
-        }
-
-        private static void Client_OnMessageReceived(object sender, OnMessageReceivedArgs e)
-        {
-
-        }
-
-        private static void Client_OnWhisperReceived(object sender, OnWhisperReceivedArgs e)
-        {
-
-        }
-
-        private static void Client_OnNewSubscriber(object sender, OnNewSubscriberArgs e)
-        {
-
         }
 
         private static void AuthorizationFlow_OnUserAuthorizationDetected(object sender, TwitchLib.Api.Events.OnUserAuthorizationDetectedArgs e)
@@ -191,10 +171,6 @@ namespace TwitchTLS
             Client.Initialize(credentials, ChannelName);
 
             Client.OnLog += Client_OnLog;
-            Client.OnJoinedChannel += Client_OnJoinedChannel;
-            Client.OnMessageReceived += Client_OnMessageReceived;
-            Client.OnWhisperReceived += Client_OnWhisperReceived;
-            Client.OnNewSubscriber += Client_OnNewSubscriber;
             Client.OnConnected += Client_OnConnected;
             Client.OnChatCommandReceived += Client_OnChatCommandReceived;
             Client.AddChatCommandIdentifier('!');

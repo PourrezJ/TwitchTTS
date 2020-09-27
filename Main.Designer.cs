@@ -1,4 +1,4 @@
-﻿namespace TwitchTLS
+﻿namespace TwitchTTS
 {
     partial class Main
     {
